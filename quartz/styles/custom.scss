@@ -1,3 +1,16 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Mermaid 圖：文字改用 body 字體（芫荽體 Iansui）
+// 否則 mermaid 預設用 --codeFont（JetBrains Mono、無 CJK）→ 圖內中文落到系統 fallback、與內文字體不一致
+code.mermaid svg,
+code.mermaid svg text,
+code.mermaid svg tspan,
+code.mermaid svg .nodeLabel,
+code.mermaid svg .edgeLabel,
+code.mermaid svg foreignObject span,
+code.mermaid svg foreignObject p,
+code.mermaid svg foreignObject div {
+  font-family: var(--bodyFont) !important;
+}

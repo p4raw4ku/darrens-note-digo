@@ -94,6 +94,14 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        {/* Custom: 不開放搜尋引擎索引（user 選擇「完全公開但不開放搜尋」） */}
+        <meta name="robots" content="noindex, nofollow" />
+        {/* Custom: 閱讀時間取整到 10 分鐘為最小單位（粗估值，換頁後也套用） */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.addEventListener("nav",function(){document.querySelectorAll(".content-meta").forEach(function(el){el.innerHTML=el.innerHTML.replace(/約\\s*(\\d+)\\s*分鐘/g,function(_,n){var x=Math.max(10,Math.round(parseInt(n,10)/10)*10);return "約 "+x+" 分鐘"})})})`,
+          }}
+        />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js

@@ -1,0 +1,4 @@
+# 禁止所有搜尋引擎索引此站
+# Disallow indexing by all search engines
+User-agent: *
+Disallow: /

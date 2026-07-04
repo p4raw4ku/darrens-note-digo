@@ -364,6 +364,24 @@ export function renderPage(
               }),
             ]}
           </Body>
+          {/* Custom: 站台 disclaimer（每頁顯示、不依賴 footer 外掛） */}
+          <footer
+            class="site-disclaimer"
+            style={{
+              maxWidth: "750px",
+              margin: "1rem auto 2.5rem",
+              padding: "1rem 2rem 0",
+              borderTop: "1px solid var(--lightgray)",
+              color: "var(--gray)",
+              fontSize: "0.78rem",
+              lineHeight: "1.7",
+              textAlign: "center",
+            }}
+          >
+            本站為個人原創遊戲的<strong>設計工作筆記</strong>，內容為進行中的設計過程紀錄，隨拍板持續改動。
+            《洛克人EXE》與《聖劍同盟》為各自權利人所有，本筆記僅作機制研究與致敬。資料截至 2026 年 7 月。
+            <div style={{ marginTop: "0.6rem", opacity: 0.7 }}>© 2026 · Built with Quartz</div>
+          </footer>
         </div>
       </body>
       {pageResources.js
