@@ -1,0 +1,13 @@
+--- engine_base/runner_dir2.py	2026-07-05 23:41:16
++++ work/a1_signal/runner_dir2.py	2026-07-06 00:51:32
+@@ -82,7 +82,9 @@
+         max_turns=cfg.max_turns, seed=cfg.seed,
+         oneply_samples=cfg.oneply_samples, expect_samples=cfg.expect_samples,
+         hand_limit=cfg.hand_limit, draw_per_turn=cfg.draw_per_turn,
+-        starting_hand=cfg.starting_hand, extra=dict(cfg.extra))
++        starting_hand=cfg.starting_hand, extra=dict(cfg.extra),
++        actions_per_turn=cfg.actions_per_turn,
++        same_category_limit=cfg.same_category_limit)
+ 
+ 
+ def _get_policy(name):

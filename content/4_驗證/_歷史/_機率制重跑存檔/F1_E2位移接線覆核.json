@@ -1,0 +1,18 @@
+{
+  "a_engine型別": "Dir2Engine",
+  "a_是Dir2OverlayEngine": false,
+  "a_是Dir2Engine": true,
+  "b_overlay_apply含on_hit": true,
+  "b_Dir2Engine覆寫_apply_chip_ability": true,
+  "b_Dir2Engine_apply含on_hit": false,
+  "b_core.Engine源碼含on_hit": false,
+  "c_牌庫含換位裝置16": true,
+  "c_牌庫含鉤索17": true,
+  "c_跑局數": 40,
+  "c_強制位移事件數": 0,
+  "c_換位鉤索打出次數(晶片能力log)": 65,
+  "d_特徵6全取值集合": [
+    0.0
+  ],
+  "d_決策數": 286
+}
