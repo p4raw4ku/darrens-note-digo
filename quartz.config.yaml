@@ -15,7 +15,6 @@ configuration:
     - CLAUDE.md
     - "9_*"
     - "0_index*"
-    - "**/0_index*"
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
