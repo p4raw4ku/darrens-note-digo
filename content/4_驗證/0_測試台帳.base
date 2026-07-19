@@ -1,0 +1,75 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.inFolder("2_DIGO_EXE/4_驗證")
+    - file.basename != "0_索引"
+    - file.basename != "1_名詞解釋"
+    - file.basename != "2_模組定義"
+    - file.basename != "3_傷害模型"
+    - file.basename != "4_引擎與世代演進"
+properties:
+  file.name:
+    displayName: 檔名（脈絡_X_Y_測試名稱）
+  測試名稱:
+    displayName: 測試ID與名稱
+  量測世代:
+    displayName: 世代
+  量測引擎:
+    displayName: 引擎
+  量測池版本:
+    displayName: 池版本
+  量測工作點:
+    displayName: 工作點
+  量測駕駛:
+    displayName: 駕駛
+  量測主題:
+    displayName: 主題
+  量測重測:
+    displayName: 在重測清單
+  file.folder:
+    displayName: 成熟度層
+views:
+  - type: table
+    name: 依成熟度與脈絡
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - 測試名稱
+      - 量測世代
+      - 量測駕駛
+      - 量測池版本
+      - 量測重測
+  - type: table
+    name: 依世代（讀數字前先看這）
+    groupBy:
+      property: 量測世代
+      direction: DESC
+    order:
+      - file.name
+      - 測試名稱
+      - 量測主題
+      - 量測駕駛
+      - 量測工作點
+      - 量測重測
+  - type: table
+    name: 依主題
+    groupBy:
+      property: 量測主題
+      direction: ASC
+    order:
+      - file.name
+      - 測試名稱
+      - 量測世代
+      - 量測駕駛
+      - 量測重測
+  - type: table
+    name: ⚠️ 缺戳記（防再犯）
+    filters:
+      and:
+        - "!量測世代"
+    order:
+      - file.name
+      - file.folder
+      - file.mtime
